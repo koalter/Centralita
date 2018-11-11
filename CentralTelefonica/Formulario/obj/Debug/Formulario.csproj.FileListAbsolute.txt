@@ -1,0 +1,15 @@
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\bin\Debug\Formulario.exe.config
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\bin\Debug\Formulario.exe
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\bin\Debug\Formulario.pdb
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.csprojAssemblyReference.cache
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.Properties.Resources.resources
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.csproj.GenerateResource.cache
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.csproj.CoreCompileInputs.cache
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.exe
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.pdb
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\bin\Debug\CentralitaHerencia.exe
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\bin\Debug\CentralitaHerencia.pdb
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\bin\Debug\CentralitaHerencia.exe.config
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.FrmLlamador.resources
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.FrmMenu.resources
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.csproj.CopyComplete

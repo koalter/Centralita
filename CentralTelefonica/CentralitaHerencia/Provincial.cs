@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
+    public enum Franja
+    {
+        Franja_1,
+        Franja_2,
+        Franja_3
+    }
+
     public class Provincial : Llamada
     {
-        public enum Franja
-        {
-            Franja_1,
-            Franja_2,
-            Franja_3
-        }
 
         protected Franja franjaHoraria;
 
-        public float CostoLlamada
+        public override float CostoLlamada
         {
             get
             {
@@ -52,14 +53,24 @@ namespace CentralitaHerencia
             return this.Duracion * costo;
         }
 
-        public override string Mostrar()
+        protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(base.Mostrar());
-            sb.AppendLine("COSTO DE LA LLAMADA: $" + this.CostoLlamada);
             sb.AppendLine("FRANJA HORARIA: " + this.franjaHoraria);
+            sb.AppendLine("COSTO DE LA LLAMADA: $" + this.CostoLlamada);
 
             return sb.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj.GetType() == typeof(Provincial);
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
         }
         #endregion
     }

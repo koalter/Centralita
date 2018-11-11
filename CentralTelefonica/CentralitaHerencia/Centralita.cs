@@ -85,7 +85,7 @@ namespace CentralitaHerencia
             return valorDeLoRecaudado;
         }
 
-        public string Mostrar()
+        private string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("RAZON SOCIAL: " + this.razonSocial);
@@ -99,18 +99,18 @@ namespace CentralitaHerencia
                 sb.AppendLine("--------------------------------------------------");
                 if (llamada.GetType() == typeof(Local))
                 {
-                    sb.AppendLine(((Local)llamada).Mostrar());
+                    sb.AppendLine(((Local)llamada).ToString());
                 }
                 else if(llamada.GetType() == typeof(Provincial))
                 {
-                    sb.AppendLine(((Provincial)llamada).Mostrar());
+                    sb.AppendLine(((Provincial)llamada).ToString());
                 }
             }
             sb.AppendLine("**************************************************************************");
 
             return sb.ToString();
         }
-
+        
         public void OrdenarLlamadas()
         {
             int length = this.Llamadas.Count;
@@ -128,6 +128,43 @@ namespace CentralitaHerencia
                     }
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
+
+        private void AgregarLlamada(Llamada nuevaLlamada)
+        {
+            this.Llamadas.Add(nuevaLlamada);
+        }
+
+        public static bool operator ==(Centralita c, Llamada llamada)
+        {
+            foreach (Llamada item in c.Llamadas)
+            {
+                if (llamada == item)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        public static bool operator !=(Centralita c, Llamada llamada)
+        {
+            return !(c == llamada);
+        }
+
+        public static Centralita operator +(Centralita c, Llamada nuevaLlamada)
+        {
+            if (c != nuevaLlamada)
+            {
+                c.AgregarLlamada(nuevaLlamada);
+            }
+
+            return c;
         }
         #endregion
     }
