@@ -16,21 +16,21 @@ namespace CentralitaHerencia
         {
             get
             {
-                return this.CalcularGanancia(Llamada.TipoLlamada.Local);
+                return this.CalcularGanancia(TipoLlamada.Local);
             }
         }
         public float GananciasPorProvincial
         {
             get
             {
-                return this.CalcularGanancia(Llamada.TipoLlamada.Provincial);
+                return this.CalcularGanancia(TipoLlamada.Provincial);
             }
         }
         public float GananciasPorTotal
         {
             get
             {
-                return this.CalcularGanancia(Llamada.TipoLlamada.Todas);
+                return this.CalcularGanancia(TipoLlamada.Todas);
             }
         }
         public List<Llamada> Llamadas
@@ -52,14 +52,14 @@ namespace CentralitaHerencia
             this.razonSocial = nombreEmpresa;
         }
 
-        private float CalcularGanancia(Llamada.TipoLlamada tipo)
+        private float CalcularGanancia(TipoLlamada tipo)
         {
             float valorDeLoRecaudado = 0;
             int length = this.Llamadas.Count;
 
             switch (tipo)
             {
-                case Llamada.TipoLlamada.Local:
+                case TipoLlamada.Local:
                     foreach (Llamada llamada in this.Llamadas)
                     {
                         if (llamada.GetType() == typeof(Local))
@@ -68,7 +68,7 @@ namespace CentralitaHerencia
                         }
                     }
                     break;
-                case Llamada.TipoLlamada.Provincial:
+                case TipoLlamada.Provincial:
                     foreach (Llamada llamada in this.Llamadas)
                     {
                         if (llamada.GetType() == typeof(Provincial))
@@ -77,8 +77,8 @@ namespace CentralitaHerencia
                         }
                     }
                     break;
-                case Llamada.TipoLlamada.Todas:
-                    valorDeLoRecaudado = this.CalcularGanancia(Llamada.TipoLlamada.Local) + this.CalcularGanancia(Llamada.TipoLlamada.Provincial);
+                case TipoLlamada.Todas:
+                    valorDeLoRecaudado = this.CalcularGanancia(TipoLlamada.Local) + this.CalcularGanancia(TipoLlamada.Provincial);
                     break;
             }
 
@@ -88,7 +88,7 @@ namespace CentralitaHerencia
         private string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("RAZON SOCIAL: " + this.razonSocial);
+            //sb.AppendLine("RAZON SOCIAL: " + this.razonSocial);
             sb.AppendLine("GANANCIA TOTAL: $" + this.GananciasPorTotal);
             sb.AppendLine("--------------------------------------------------");
             sb.AppendLine("GANANCIA LOCAL: $" + this.GananciasPorLocal);
@@ -106,7 +106,7 @@ namespace CentralitaHerencia
                     sb.AppendLine(((Provincial)llamada).ToString());
                 }
             }
-            sb.AppendLine("**************************************************************************");
+            //sb.AppendLine("**************************************************************************");
 
             return sb.ToString();
         }

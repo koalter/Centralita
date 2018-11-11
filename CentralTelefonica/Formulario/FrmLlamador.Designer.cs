@@ -263,6 +263,7 @@
             this.Controls.Add(this.grpPanel);
             this.Controls.Add(this.txtNroDestino);
             this.Name = "FrmLlamador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Llamador";
             this.grpPanel.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -14,6 +14,7 @@ namespace Formulario
     public partial class FrmLlamador : Form
     {
         Centralita c;
+        Llamada llamada;
 
         public FrmLlamador(Centralita c)
         {
@@ -22,9 +23,6 @@ namespace Formulario
 
             // Carga
             cmbFranja.DataSource = Enum.GetValues(typeof(Franja));
-            // Lectura
-            Franja franjas;
-            Enum.TryParse<Franja>(cmbFranja.SelectedValue.ToString(), out franjas);
         }
 
         public Centralita Central
@@ -97,6 +95,31 @@ namespace Formulario
 
         private void btnLlamar_Click(object sender, EventArgs e)
         {
+            Random rand = new Random();
+            if (cmbFranja.Enabled)
+            {
+                // Lectura
+                Franja franjas;
+                Enum.TryParse<Franja>(cmbFranja.SelectedValue.ToString(), out franjas);
+
+                llamada = new Provincial(
+                    txtNroOrigen.Text, 
+                    franjas, 
+                    rand.Next(1, 51),
+                    txtNroDestino.Text);
+            }
+            else
+            {
+                llamada = new Local(
+                    txtNroOrigen.Text, 
+                    rand.Next(1, 51), 
+                    txtNroDestino.Text, 
+                    (float)rand.Next(50, 561) / 100);
+            }
+
+            this.c += llamada;
+
+            MessageBox.Show("Llamada realizada", "Llamar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

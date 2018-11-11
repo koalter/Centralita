@@ -13,3 +13,4 @@ C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\bin\Debug\Central
 C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.FrmLlamador.resources
 C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.FrmMenu.resources
 C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.csproj.CopyComplete
+C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Formulario\obj\Debug\Formulario.FrmMostrar.resources

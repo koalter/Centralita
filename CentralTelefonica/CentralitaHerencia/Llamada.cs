@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
+    public enum TipoLlamada
+    {
+        Local,
+        Provincial,
+        Todas
+    }
+
     public abstract class Llamada
     {
-        public enum TipoLlamada
-        {
-            Local,
-            Provincial,
-            Todas
-        }
 
         protected float duracion;
         protected string nroDestino;

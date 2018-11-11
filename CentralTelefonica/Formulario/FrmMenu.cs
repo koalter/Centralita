@@ -31,5 +31,23 @@ namespace Formulario
         {
             this.Close();
         }
+
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+            FrmMostrar todas = new FrmMostrar(c, TipoLlamada.Todas);
+            todas.ShowDialog();
+        }
+
+        private void btnLocal_Click(object sender, EventArgs e)
+        {
+            FrmMostrar locales = new FrmMostrar(c, TipoLlamada.Local);
+            locales.ShowDialog();
+        }
+
+        private void btnProvincial_Click(object sender, EventArgs e)
+        {
+            FrmMostrar provinciales = new FrmMostrar(c, TipoLlamada.Provincial);
+            provinciales.ShowDialog();
+        }
     }
 }

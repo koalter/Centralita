@@ -28,12 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.rtbFactura = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
+            // 
+            // rtbFactura
+            // 
+            this.rtbFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbFactura.Location = new System.Drawing.Point(12, 12);
+            this.rtbFactura.Name = "rtbFactura";
+            this.rtbFactura.ReadOnly = true;
+            this.rtbFactura.Size = new System.Drawing.Size(326, 309);
+            this.rtbFactura.TabIndex = 0;
+            this.rtbFactura.Text = "";
+            // 
+            // FrmMostrar
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmMostrar";
+            this.ClientSize = new System.Drawing.Size(350, 333);
+            this.Controls.Add(this.rtbFactura);
+            this.Name = "FrmMostrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Factura";
+            this.Load += new System.EventHandler(this.FrmMostrar_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.RichTextBox rtbFactura;
     }
 }
