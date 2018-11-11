@@ -117,9 +117,14 @@ namespace Formulario
                     (float)rand.Next(50, 561) / 100);
             }
 
-            this.c += llamada;
-
-            MessageBox.Show("Llamada realizada", "Llamar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                this.c += llamada;
+                MessageBox.Show("Llamada realizada", "Llamar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (CentralitaException ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

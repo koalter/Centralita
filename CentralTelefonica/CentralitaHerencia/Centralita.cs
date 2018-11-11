@@ -162,9 +162,14 @@ namespace CentralitaHerencia
             if (c != nuevaLlamada)
             {
                 c.AgregarLlamada(nuevaLlamada);
+                return c;
             }
-
-            return c;
+            else
+            {
+                string clase = nameof(nuevaLlamada);
+                string metodo = String.Format("public static Centralita operator +({0}, {1})", nameof(c), clase);
+                throw new CentralitaException("La llamada ya se encuentra registrada en el sistema \n", clase, metodo);
+            }
         }
         #endregion
     }

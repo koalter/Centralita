@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.btnGenerarLlamada = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
             this.btnLocal = new System.Windows.Forms.Button();
@@ -95,6 +96,7 @@
             this.Controls.Add(this.btnLocal);
             this.Controls.Add(this.btnTotal);
             this.Controls.Add(this.btnGenerarLlamada);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Central Telefónica";

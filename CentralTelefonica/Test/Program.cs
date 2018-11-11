@@ -24,7 +24,13 @@ namespace Test
             c += l2;
             c += l3;
             // El operador debería detectar que es la misma llamada que l2 y por lo tanto no agregarla a la centralita.
-            c += l4;
+            try
+            {
+                c += l4;
+            } catch (CentralitaException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             c.OrdenarLlamadas();
             Console.WriteLine(c.ToString());
             Console.ReadKey();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLlamador));
             this.txtNroDestino = new System.Windows.Forms.TextBox();
             this.grpPanel = new System.Windows.Forms.GroupBox();
             this.button12 = new System.Windows.Forms.Button();
@@ -262,6 +263,7 @@
             this.Controls.Add(this.btnLlamar);
             this.Controls.Add(this.grpPanel);
             this.Controls.Add(this.txtNroDestino);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLlamador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Llamador";
