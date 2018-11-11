@@ -13,6 +13,7 @@ namespace Test
         {
             // Mi central
             Centralita c = new Centralita("Fede Center");
+            Console.WriteLine(c.Llamadas);
             // Mis 4 llamadas
             Local l1 = new Local("Bernal", 30, "Rosario", 2.65f);
             Provincial l2 = new Provincial("Morón", Franja.Franja_1, 21, "Bernal");
