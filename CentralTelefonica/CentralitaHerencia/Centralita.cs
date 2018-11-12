@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public class Centralita
+    public class Centralita : IGuardar<string>
     {
         List<Llamada> listaDeLlamadas;
         protected string razonSocial;
@@ -40,6 +40,9 @@ namespace CentralitaHerencia
                 return this.listaDeLlamadas;
             }
         }
+
+        public string RutaDeArchivo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
         #endregion
 
         #region Metodos
@@ -88,7 +91,10 @@ namespace CentralitaHerencia
         private string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            //sb.AppendLine("RAZON SOCIAL: " + this.razonSocial);
+            if (this.razonSocial != String.Empty)
+            {
+                sb.AppendLine("RAZON SOCIAL: " + this.razonSocial);
+            }
             sb.AppendLine("GANANCIA TOTAL: $" + this.GananciasPorTotal);
             sb.AppendLine("--------------------------------------------------");
             sb.AppendLine("GANANCIA LOCAL: $" + this.GananciasPorLocal);
@@ -170,6 +176,19 @@ namespace CentralitaHerencia
                 string metodo = String.Format("public static Centralita operator +({0}, {1})", nameof(c), clase);
                 throw new CentralitaException("La llamada ya se encuentra registrada en el sistema \n", clase, metodo);
             }
+        }
+
+
+        public bool Guardar()
+        {
+            this.ToString();
+
+            return true;
+        }
+
+        public string Leer()
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

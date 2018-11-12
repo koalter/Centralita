@@ -13,7 +13,7 @@ namespace CentralitaHerencia
         Franja_3
     }
 
-    public class Provincial : Llamada
+    public class Provincial : Llamada, IGuardar<Provincial>
     {
 
         protected Franja franjaHoraria;
@@ -25,6 +25,8 @@ namespace CentralitaHerencia
                 return this.CalcularCosto();
             }
         }
+
+        public string RutaDeArchivo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         #region Metodos
         public Provincial(Franja miFranja, Llamada llamada) : this(llamada.NroOrigen, miFranja, llamada.Duracion, llamada.NroDestino) { }
@@ -71,6 +73,16 @@ namespace CentralitaHerencia
         public override string ToString()
         {
             return this.Mostrar();
+        }
+
+        public bool Guardar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Provincial Leer()
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

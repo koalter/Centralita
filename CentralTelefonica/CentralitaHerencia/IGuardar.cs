@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    class Program
+    public interface IGuardar<T>
     {
-        static void Main(string[] args)
+        string RutaDeArchivo
         {
+            get;
+            set;
         }
+
+        bool Guardar();
+        T Leer();
     }
 }

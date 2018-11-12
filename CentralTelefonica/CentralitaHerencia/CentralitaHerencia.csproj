@@ -45,9 +45,9 @@
   <ItemGroup>
     <Compile Include="Centralita.cs" />
     <Compile Include="CentralitaException.cs" />
+    <Compile Include="IGuardar.cs" />
     <Compile Include="Llamada.cs" />
     <Compile Include="Local.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincial.cs" />
   </ItemGroup>
