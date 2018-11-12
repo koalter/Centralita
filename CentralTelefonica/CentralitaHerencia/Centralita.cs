@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace CentralitaHerencia
 {
@@ -181,9 +182,12 @@ namespace CentralitaHerencia
 
         public bool Guardar()
         {
-            this.ToString();
+            FileStream fs = new FileStream("log.txt", FileMode.Create);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.Write(String.Format("{0} - Se realizó una llamada", DateTime.Now.ToString("dddd dd mmmm yyyy hh:mm")));
+            sw.Close();
 
-            return true;
+            return File.Exists("log.txt") && fs.Length != 0;
         }
 
         public string Leer()
