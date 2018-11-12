@@ -32,8 +32,13 @@ namespace Test
             {
                 Console.WriteLine(e.Message);
             }
+            // Ordeno las llamadas
             c.OrdenarLlamadas();
+            // Muestro...
             Console.WriteLine(c.ToString());
+            // Guardo el registro de llamadas en un archivo de texto, lo leo y lo muestro por pantalla
+            c.Guardar();
+            Console.WriteLine(c.Leer());
             Console.ReadKey();
         }
     }

@@ -20,3 +20,14 @@ C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Test\bin\Debug\CentralitaHer
 C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Test\bin\Debug\CentralitaHerencia.pdb
 C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Test\bin\Debug\CentralitaHerencia.exe.config
 C:\Users\MI PC\Desktop\Centralita\CentralTelefonica\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\obj\Debug\Test.exe
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\obj\Debug\Test.pdb
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\bin\Debug\Test.exe.config
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\bin\Debug\Test.exe
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\bin\Debug\Test.pdb
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\bin\Debug\CentralitaHerencia.exe
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\bin\Debug\CentralitaHerencia.pdb
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\bin\Debug\CentralitaHerencia.exe.config
+C:\Users\Publico\Desktop\Centralita\CentralTelefonica\Test\obj\Debug\Test.csproj.CopyComplete
