@@ -28,17 +28,26 @@ namespace Test
             try
             {
                 c += l4;
-            } catch (CentralitaException e)
+            } catch (CentralitaException ex)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(ex.Message);
             }
             // Ordeno las llamadas
             c.OrdenarLlamadas();
             // Muestro...
             Console.WriteLine(c.ToString());
             // Guardo el registro de llamadas en un archivo de texto, lo leo y lo muestro por pantalla
-            c.Guardar();
-            Console.WriteLine(c.Leer());
+            try
+            {
+                c.Guardar();
+            } catch (FallaLogException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine(c.Leer());
+            }
             Console.ReadKey();
         }
     }

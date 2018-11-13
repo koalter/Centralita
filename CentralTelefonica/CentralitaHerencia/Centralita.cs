@@ -171,7 +171,7 @@ namespace CentralitaHerencia
                 c.AgregarLlamada(nuevaLlamada);
                 if (c.Guardar() == false)
                 {
-                    throw new FallaLogException();
+                    throw new FallaLogException("No se pudieron guardar todos los datos.");
                 }
                 return c;
             }
@@ -186,13 +186,17 @@ namespace CentralitaHerencia
 
         public bool Guardar()
         {
+            StringBuilder comparacion = new StringBuilder();
             StreamWriter sw = new StreamWriter("log.txt");
+            string texto;
             foreach (Llamada llamada in this.Llamadas)
             {
-                sw.WriteLine(DateTime.Now.ToString("dddd dd \\de MMMM \\de yyyy hh:mm") + " - Se realizó una llamada");
+                texto = String.Format(DateTime.Now.ToString("dddd dd \\de MMMM \\de yyyy hh:mm") + " - Se realizó una llamada");
+                sw.WriteLine(texto);
+                comparacion.AppendLine(texto);
             }
             sw.Close();
-            return File.Exists("log.txt");
+            return comparacion.ToString() == this.Leer();
         }
 
         public string Leer()

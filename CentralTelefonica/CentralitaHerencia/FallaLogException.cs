@@ -9,5 +9,7 @@ namespace CentralitaHerencia
     public class FallaLogException : Exception
     {
         public FallaLogException() : base() { }
+
+        public FallaLogException(string mensaje) : base(mensaje) { }
     }
 }
