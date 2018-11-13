@@ -50,6 +50,8 @@ namespace CentralitaHerencia
         #endregion
 
         #region Metodos
+        public Llamada() { }
+
         public Llamada(float duracion, string nroDestino, string nroOrigen)
         {
             this.duracion = duracion;

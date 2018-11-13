@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace CentralitaHerencia
 {
@@ -18,12 +21,26 @@ namespace CentralitaHerencia
             }
         }
 
-        public string RutaDeArchivo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string RutaDeArchivo
+        {
+            get
+            {
+                return "Locales.xml";
+            }
+            set
+            {
+
+            }
+        }
 
         #region Metodos
-        public Local(Llamada llamada, float costo) : this(llamada.NroOrigen, llamada.Duracion, llamada.NroDestino, costo) { }
+        public Local() { }
 
-        public Local(string origen, float duracion, string destino, float costo) : base(duracion, destino, origen)
+        public Local(Llamada llamada, float costo) 
+            : this(llamada.NroOrigen, llamada.Duracion, llamada.NroDestino, costo) { }
+
+        public Local(string origen, float duracion, string destino, float costo) 
+            : base(duracion, destino, origen)
         {
             this.costo = costo;
         }
@@ -54,12 +71,40 @@ namespace CentralitaHerencia
 
         public bool Guardar()
         {
-            throw new NotImplementedException();
+            bool retorno;
+
+            if (this != null)
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(Local));
+                XmlTextWriter writer = new XmlTextWriter(this.RutaDeArchivo, Encoding.UTF8);
+
+                serializer.Serialize(writer, this);
+                writer.Close();
+
+                retorno = true;
+            }
+            else
+            {
+                retorno = false;
+            }
+
+            return retorno;
         }
 
         public Local Leer()
         {
-            throw new NotImplementedException();
+            Local llamada = new Local();
+            XmlSerializer serializer = new XmlSerializer(typeof(Local));
+            XmlTextReader reader = new XmlTextReader(this.RutaDeArchivo);
+            try
+            {
+                llamada = (Local)serializer.Deserialize(reader);
+                return llamada;
+            }
+            finally
+            {
+                reader.Close();
+            }
         }
         #endregion
     }

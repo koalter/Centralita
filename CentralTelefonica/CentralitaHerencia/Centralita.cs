@@ -42,7 +42,17 @@ namespace CentralitaHerencia
             }
         }
 
-        public string RutaDeArchivo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string RutaDeArchivo
+        {
+            get
+            {
+                return "log.txt";
+            }  
+            set
+            {
+
+            }
+        }
         
         #endregion
 
@@ -186,26 +196,35 @@ namespace CentralitaHerencia
 
         public bool Guardar()
         {
-            StringBuilder comparacion = new StringBuilder();
-            StreamWriter sw = new StreamWriter("log.txt");
-            string texto;
-            foreach (Llamada llamada in this.Llamadas)
+            bool retorno;
+
+            if (this != null && this.Llamadas.Count > 0)
             {
-                texto = String.Format(DateTime.Now.ToString("dddd dd \\de MMMM \\de yyyy hh:mm") + " - Se realizó una llamada");
-                sw.WriteLine(texto);
-                comparacion.AppendLine(texto);
+                StreamWriter sw = new StreamWriter(this.RutaDeArchivo);
+
+                foreach (Llamada llamada in this.Llamadas)
+                {
+                    sw.WriteLine(DateTime.Now.ToString("dddd dd \\de MMMM \\de yyyy hh:mm") + " - Se realizó una llamada");
+                }
+                
+                sw.Close();
+                retorno = true;
             }
-            sw.Close();
-            return comparacion.ToString() == this.Leer();
+            else
+            {
+                retorno = false;
+            }
+
+            return retorno;
         }
 
         public string Leer()
         {
             string retorno = String.Empty;
 
-            if (File.Exists("log.txt"))
+            if (File.Exists(this.RutaDeArchivo))
             {
-                StreamReader sw = new StreamReader("log.txt");
+                StreamReader sw = new StreamReader(this.RutaDeArchivo);
                 retorno = sw.ReadToEnd();
                 sw.Close();
             }
